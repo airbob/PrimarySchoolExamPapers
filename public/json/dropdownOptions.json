@@ -1,0 +1,877 @@
+{
+  "Level": [
+    {
+      "code": "0",
+      "name": "All Levels"
+    },
+    {
+      "code": "1",
+      "name": "P1"
+    },
+    {
+      "code": "2",
+      "name": "P2"
+    },
+    {
+      "code": "3",
+      "name": "P3"
+    },
+    {
+      "code": "4",
+      "name": "P4"
+    },
+    {
+      "code": "5",
+      "name": "P5"
+    },
+    {
+      "code": "6",
+      "name": "P6"
+    }
+  ],
+  "Subject": [
+    {
+      "code": "0",
+      "name": "All Subjects"
+    },
+    {
+      "code": "1",
+      "name": "English"
+    },
+    {
+      "code": "2",
+      "name": "Chinese"
+    },
+    {
+      "code": "3",
+      "name": "Mathematics"
+    },
+    {
+      "code": "4",
+      "name": "Science"
+    }
+  ],
+  "Type": [
+    {
+      "code": "0",
+      "name": "All Types"
+    },
+    {
+      "code": "1",
+      "name": "WA1"
+    },
+    {
+      "code": "2",
+      "name": "SA1"
+    },
+    {
+      "code": "3",
+      "name": "WA2"
+    },
+    {
+      "code": "4",
+      "name": "SA2"
+    },
+    {
+      "code": "5",
+      "name": "WA3"
+    }
+  ],
+  "Year": [
+    {
+      "code": "0",
+      "name": "All Years"
+    },
+    {
+      "code": "2023",
+      "name": "2023"
+    },
+    {
+      "code": "2022",
+      "name": "2022"
+    },
+    {
+      "code": "2021",
+      "name": "2021"
+    },
+    {
+      "code": "2020",
+      "name": "2020"
+    },
+    {
+      "code": "2019",
+      "name": "2019"
+    }
+  ],
+
+  "School": [
+    {
+      "code": "0",
+      "name": "All Schools"
+    },
+    {
+      "code": "1744",
+      "name": "Admiralty Primary School"
+    },
+    {
+      "code": "1738",
+      "name": "Ahmad Ibrahim Primary School"
+    },
+    {
+      "code": "5625",
+      "name": "Ai Tong School"
+    },
+    {
+      "code": "1266",
+      "name": "Alexandra Primary School"
+    },
+    {
+      "code": "1254",
+      "name": "Anchor Green Primary School"
+    },
+    {
+      "code": "1766",
+      "name": "Anderson Primary School"
+    },
+    {
+      "code": "1150",
+      "name": "Ang Mo Kio Primary School"
+    },
+    {
+      "code": "5001",
+      "name": "Anglo chinese School (junior)"
+    },
+    {
+      "code": "5638",
+      "name": "Anglo chinese School (primary)"
+    },
+    {
+      "code": "1268",
+      "name": "Angsana Primary School"
+    },
+    {
+      "code": "1234",
+      "name": "Balestier Hill Primary School"
+    },
+    {
+      "code": "1249",
+      "name": "Beacon Primary School"
+    },
+    {
+      "code": "1230",
+      "name": "Bedok Green Primary School"
+    },
+    {
+      "code": "1129",
+      "name": "Bendemeer Primary School"
+    },
+    {
+      "code": "1145",
+      "name": "Blangah Rise Primary School"
+    },
+    {
+      "code": "1640",
+      "name": "Boon Lay Garden Primary School"
+    },
+    {
+      "code": "1020",
+      "name": "Bukit Panjang Primary School"
+    },
+    {
+      "code": "1247",
+      "name": "Bukit Timah Primary School"
+    },
+    {
+      "code": "1209",
+      "name": "Bukit View Primary School"
+    },
+    {
+      "code": "1751",
+      "name": "Canberra Primary School"
+    },
+    {
+      "code": "5003",
+      "name": "Canossa Convent Primary School"
+    },
+    {
+      "code": "1256",
+      "name": "Cantonment Primary School"
+    },
+    {
+      "code": "1771",
+      "name": "Casuarina Primary School"
+    },
+    {
+      "code": "7102",
+      "name": "Catholic High School"
+    },
+    {
+      "code": "1211",
+      "name": "Cedar Primary School"
+    },
+    {
+      "code": "1239",
+      "name": "Changkat Primary School"
+    },
+    {
+      "code": "5637",
+      "name": "Chij (katong) Primary"
+    },
+    {
+      "code": "5005",
+      "name": "Chij (kellock)"
+    },
+    {
+      "code": "5017",
+      "name": "Chij Our Lady Of Good Counsel"
+    },
+    {
+      "code": "5007",
+      "name": "Chij Our Lady Of The Nativity"
+    },
+    {
+      "code": "5019",
+      "name": "Chij Our Lady Queen Of Peace"
+    },
+    {
+      "code": "5004",
+      "name": "Chij Primary (toa Payoh)"
+    },
+    {
+      "code": "7118",
+      "name": "Chij St. Nicholas Girls' School"
+    },
+    {
+      "code": "5636",
+      "name": "Chongfu School"
+    },
+    {
+      "code": "1203",
+      "name": "Chongzheng Primary School"
+    },
+    {
+      "code": "1244",
+      "name": "Chua Chu Kang Primary School"
+    },
+    {
+      "code": "1772",
+      "name": "Clementi Primary School"
+    },
+    {
+      "code": "1757",
+      "name": "Compassvale Primary School"
+    },
+    {
+      "code": "1760",
+      "name": "Concord Primary School"
+    },
+    {
+      "code": "1754",
+      "name": "Coral Primary School"
+    },
+    {
+      "code": "1132",
+      "name": "Corporation Primary School"
+    },
+    {
+      "code": "1168",
+      "name": "Da Qiao Primary School"
+    },
+    {
+      "code": "1102",
+      "name": "Damai Primary School"
+    },
+    {
+      "code": "1229",
+      "name": "Dazhong Primary School"
+    },
+    {
+      "code": "5008",
+      "name": "De La Salle School"
+    },
+    {
+      "code": "1183",
+      "name": "East Coast Primary School"
+    },
+    {
+      "code": "1755",
+      "name": "East Spring Primary School"
+    },
+    {
+      "code": "1237",
+      "name": "East View Primary School"
+    },
+    {
+      "code": "1769",
+      "name": "Edgefield Primary School"
+    },
+    {
+      "code": "1737",
+      "name": "Elias Park Primary School"
+    },
+    {
+      "code": "1252",
+      "name": "Endeavour Primary School"
+    },
+    {
+      "code": "1119",
+      "name": "Eunos Primary School"
+    },
+    {
+      "code": "1756",
+      "name": "Evergreen Primary School"
+    },
+    {
+      "code": "5020",
+      "name": "Fairfield Methodist School (primary)"
+    },
+    {
+      "code": "1246",
+      "name": "Farrer Park Primary School"
+    },
+    {
+      "code": "1657",
+      "name": "Fengshan Primary School"
+    },
+    {
+      "code": "1272",
+      "name": "Fern Green Primary School"
+    },
+    {
+      "code": "1177",
+      "name": "Fernvale Primary School"
+    },
+    {
+      "code": "1610",
+      "name": "First Toa Payoh Primary School"
+    },
+    {
+      "code": "1257",
+      "name": "Frontier Primary School"
+    },
+    {
+      "code": "1208",
+      "name": "Fuchun Primary School"
+    },
+    {
+      "code": "1107",
+      "name": "Fuhua Primary School"
+    },
+    {
+      "code": "1221",
+      "name": "Gan Eng Seng Primary School"
+    },
+    {
+      "code": "5022",
+      "name": "Geylang Methodist School (primary)"
+    },
+    {
+      "code": "1222",
+      "name": "Gongshang Primary School"
+    },
+    {
+      "code": "1251",
+      "name": "Greendale Primary School"
+    },
+    {
+      "code": "1245",
+      "name": "Greenridge Primary School"
+    },
+    {
+      "code": "1765",
+      "name": "Greenwood Primary School"
+    },
+    {
+      "code": "1735",
+      "name": "Guangyang Primary School"
+    },
+    {
+      "code": "1038",
+      "name": "Haig Girls' School"
+    },
+    {
+      "code": "1121",
+      "name": "Henry Park Primary School"
+    },
+    {
+      "code": "5634",
+      "name": "Holy Innocents' Primary School"
+    },
+    {
+      "code": "5626",
+      "name": "Hong Wen School"
+    },
+    {
+      "code": "1255",
+      "name": "Horizon Primary School"
+    },
+    {
+      "code": "1763",
+      "name": "Hougang Primary School"
+    },
+    {
+      "code": "1223",
+      "name": "Huamin Primary School"
+    },
+    {
+      "code": "1250",
+      "name": "Innova Primary School"
+    },
+    {
+      "code": "1207",
+      "name": "Jiemin Primary School"
+    },
+    {
+      "code": "1166",
+      "name": "Jing Shan Primary School"
+    },
+    {
+      "code": "1727",
+      "name": "Junyuan Primary School"
+    },
+    {
+      "code": "1045",
+      "name": "Jurong Primary School"
+    },
+    {
+      "code": "1753",
+      "name": "Jurong West Primary School"
+    },
+    {
+      "code": "1726",
+      "name": "Juying Primary School"
+    },
+    {
+      "code": "1238",
+      "name": "Keming Primary School"
+    },
+    {
+      "code": "5608",
+      "name": "Kheng Cheng School"
+    },
+    {
+      "code": "5168",
+      "name": "Kong Hwa School"
+    },
+    {
+      "code": "1745",
+      "name": "Kranji Primary School"
+    },
+    {
+      "code": "5024",
+      "name": "Kuo Chuan Presbyterian Primary School"
+    },
+    {
+      "code": "1248",
+      "name": "Lakeside Primary School"
+    },
+    {
+      "code": "1232",
+      "name": "Lianhua Primary School"
+    },
+    {
+      "code": "1242",
+      "name": "Loyang Primary School"
+    },
+    {
+      "code": "1619",
+      "name": "Macpherson Primary School"
+    },
+    {
+      "code": "5601",
+      "name": "Maha Bodhi School"
+    },
+    {
+      "code": "7111",
+      "name": "Maris Stella High School"
+    },
+    {
+      "code": "1645",
+      "name": "Marsiling Primary School"
+    },
+    {
+      "code": "7301",
+      "name": "Marymount Convent School"
+    },
+    {
+      "code": "1151",
+      "name": "Mayflower Primary School"
+    },
+    {
+      "code": "5183",
+      "name": "Mee Toh School"
+    },
+    {
+      "code": "1764",
+      "name": "Meridian Primary School"
+    },
+    {
+      "code": "5027",
+      "name": "Methodist Girls' School (primary)"
+    },
+    {
+      "code": "5018",
+      "name": "Montfort Junior School"
+    },
+    {
+      "code": "5028",
+      "name": "Nan Chiau Primary School"
+    },
+    {
+      "code": "5622",
+      "name": "Nan Hua Primary School"
+    },
+    {
+      "code": "5258",
+      "name": "Nanyang Primary School"
+    },
+    {
+      "code": "1730",
+      "name": "Naval Base Primary School"
+    },
+    {
+      "code": "1621",
+      "name": "New Town Primary School"
+    },
+    {
+      "code": "5197",
+      "name": "Ngee Ann Primary School"
+    },
+    {
+      "code": "1761",
+      "name": "North Spring Primary School"
+    },
+    {
+      "code": "1740",
+      "name": "North View Primary School"
+    },
+    {
+      "code": "1253",
+      "name": "North Vista Primary School"
+    },
+    {
+      "code": "1729",
+      "name": "Northland Primary School"
+    },
+    {
+      "code": "1267",
+      "name": "Northoaks Primary School"
+    },
+    {
+      "code": "1270",
+      "name": "Oasis Primary School"
+    },
+    {
+      "code": "1212",
+      "name": "Opera Estate Primary School"
+    },
+    {
+      "code": "1263",
+      "name": "Palm View Primary School"
+    },
+    {
+      "code": "1743",
+      "name": "Park View Primary School"
+    },
+    {
+      "code": "1243",
+      "name": "Pasir Ris Primary School"
+    },
+    {
+      "code": "5635",
+      "name": "Paya Lebar Methodist Girls' School (primary)"
+    },
+    {
+      "code": "5602",
+      "name": "Pei Chun Public School"
+    },
+    {
+      "code": "5623",
+      "name": "Pei Hwa Presbyterian Primary School"
+    },
+    {
+      "code": "1650",
+      "name": "Pei Tong Primary School"
+    },
+    {
+      "code": "1236",
+      "name": "Peiying Primary School"
+    },
+    {
+      "code": "1741",
+      "name": "Pioneer Primary School"
+    },
+    {
+      "code": "5603",
+      "name": "Poi Ching School"
+    },
+    {
+      "code": "1228",
+      "name": "Princess Elizabeth Primary School"
+    },
+    {
+      "code": "1269",
+      "name": "Punggol Cove Primary School"
+    },
+    {
+      "code": "1259",
+      "name": "Punggol Green Primary School"
+    },
+    {
+      "code": "1742",
+      "name": "Punggol Primary School"
+    },
+    {
+      "code": "1260",
+      "name": "Punggol View Primary School"
+    },
+    {
+      "code": "1197",
+      "name": "Qifa Primary School"
+    },
+    {
+      "code": "1734",
+      "name": "Qihua Primary School"
+    },
+    {
+      "code": "1071",
+      "name": "Queenstown Primary School"
+    },
+    {
+      "code": "1072",
+      "name": "Radin Mas Primary School"
+    },
+    {
+      "code": "1073",
+      "name": "Raffles Girls' Primary School"
+    },
+    {
+      "code": "5214",
+      "name": "Red Swastika School"
+    },
+    {
+      "code": "1217",
+      "name": "River Valley Primary School"
+    },
+    {
+      "code": "1264",
+      "name": "Riverside Primary School"
+    },
+    {
+      "code": "1752",
+      "name": "Rivervale Primary School"
+    },
+    {
+      "code": "1077",
+      "name": "Rosyth School"
+    },
+    {
+      "code": "1195",
+      "name": "Rulang Primary School"
+    },
+    {
+      "code": "1759",
+      "name": "Sembawang Primary School"
+    },
+    {
+      "code": "1746",
+      "name": "Seng Kang Primary School"
+    },
+    {
+      "code": "1261",
+      "name": "Sengkang Green Primary School"
+    },
+    {
+      "code": "1220",
+      "name": "Shuqun Primary School"
+    },
+    {
+      "code": "1161",
+      "name": "Si Ling Primary School"
+    },
+    {
+      "code": "5026",
+      "name": "Singapore Chinese Girls' Primary School"
+    },
+    {
+      "code": "1241",
+      "name": "South View Primary School"
+    },
+    {
+      "code": "1262",
+      "name": "Springdale Primary School"
+    },
+    {
+      "code": "5009",
+      "name": "St. Andrew's Junior School"
+    },
+    {
+      "code": "5011",
+      "name": "St. Anthony's Canossian Primary School"
+    },
+    {
+      "code": "5259",
+      "name": "St. Anthony's Primary School"
+    },
+    {
+      "code": "5012",
+      "name": "St. Gabriel's Primary School"
+    },
+    {
+      "code": "5025",
+      "name": "St. Hilda's Primary School"
+    },
+    {
+      "code": "5014",
+      "name": "St. Joseph's Institution Junior"
+    },
+    {
+      "code": "5013",
+      "name": "St. Margaret's Primary School"
+    },
+    {
+      "code": "5015",
+      "name": "St. Stephen's School"
+    },
+    {
+      "code": "1174",
+      "name": "Stamford Primary School"
+    },
+    {
+      "code": "1736",
+      "name": "Tampines North Primary School"
+    },
+    {
+      "code": "1201",
+      "name": "Tampines Primary School"
+    },
+    {
+      "code": "1773",
+      "name": "Tanjong Katong Primary School"
+    },
+    {
+      "code": "5240",
+      "name": "Tao Nan School"
+    },
+    {
+      "code": "1158",
+      "name": "Teck Ghee Primary School"
+    },
+    {
+      "code": "1043",
+      "name": "Teck Whye Primary School"
+    },
+    {
+      "code": "1218",
+      "name": "Telok Kurau Primary School"
+    },
+    {
+      "code": "1160",
+      "name": "Temasek Primary School"
+    },
+    {
+      "code": "1189",
+      "name": "Townsville Primary School"
+    },
+    {
+      "code": "1750",
+      "name": "Unity Primary School"
+    },
+    {
+      "code": "1271",
+      "name": "Waterway Primary School"
+    },
+    {
+      "code": "1767",
+      "name": "Wellington Primary School"
+    },
+    {
+      "code": "1770",
+      "name": "West Grove Primary School"
+    },
+    {
+      "code": "1265",
+      "name": "West Spring Primary School"
+    },
+    {
+      "code": "1748",
+      "name": "West View Primary School"
+    },
+    {
+      "code": "1258",
+      "name": "Westwood Primary School"
+    },
+    {
+      "code": "1749",
+      "name": "White Sands Primary School"
+    },
+    {
+      "code": "1758",
+      "name": "Woodgrove Primary School"
+    },
+    {
+      "code": "1114",
+      "name": "Woodlands Primary School"
+    },
+    {
+      "code": "1747",
+      "name": "Woodlands Ring Primary School"
+    },
+    {
+      "code": "1205",
+      "name": "Xinghua Primary School"
+    },
+    {
+      "code": "1731",
+      "name": "Xingnan Primary School"
+    },
+    {
+      "code": "1724",
+      "name": "Xinmin Primary School"
+    },
+    {
+      "code": "1227",
+      "name": "Xishan Primary School"
+    },
+    {
+      "code": "1725",
+      "name": "Yangzheng Primary School"
+    },
+    {
+      "code": "1762",
+      "name": "Yew Tee Primary School"
+    },
+    {
+      "code": "1143",
+      "name": "Yio Chu Kang Primary School"
+    },
+    {
+      "code": "1172",
+      "name": "Yishun Primary School"
+    },
+    {
+      "code": "1658",
+      "name": "Yu Neng Primary School"
+    },
+    {
+      "code": "1656",
+      "name": "Yuhua Primary School"
+    },
+    {
+      "code": "1219",
+      "name": "Yumin Primary School"
+    },
+    {
+      "code": "1199",
+      "name": "Zhangde Primary School"
+    },
+    {
+      "code": "1240",
+      "name": "Zhenghua Primary School"
+    },
+    {
+      "code": "1235",
+      "name": "Zhonghua Primary School"
+    }
+  ]
+}
