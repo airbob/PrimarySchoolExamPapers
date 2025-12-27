@@ -85,6 +85,15 @@ const filters = ref({
   Year: '0'
 })
 
+const showFiltersMobile = ref(false)
+const toggleFilters = () => {
+  showFiltersMobile.value = !showFiltersMobile.value
+}
+
+const activeFilterCount = computed(() => {
+  return Object.values(filters.value).filter(v => v !== '0').length
+})
+
 // --- Data Fetching ---
 onMounted(async () => {
   try {
@@ -196,44 +205,56 @@ const downloadPaper = (filename: string) => {
     </header>
 
     <!-- Filters Bar -->
-    <div class="filters-bar">
-      <div class="content-wrapper filter-grid">
-        <div class="filter-group">
-          <label>Level</label>
-          <select v-model="filters.Level">
-            <option v-for="opt in options.Level" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
-          </select>
+    <div class="filters-bar" :class="{ 'is-expanded': showFiltersMobile }">
+      <!-- Mobile Toggle Button -->
+      <button class="mobile-filter-toggle" @click="toggleFilters">
+        <div class="toggle-content">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="2" y1="14" x2="6" y2="14"></line><line x1="10" y1="8" x2="14" y2="8"></line><line x1="18" y1="16" x2="22" y2="16"></line></svg>
+          <span v-if="activeFilterCount === 0">Filter Papers</span>
+          <span v-else>Active Filters ({{ activeFilterCount }})</span>
         </div>
-        
-        <div class="filter-group">
-          <label>Subject</label>
-          <select v-model="filters.Subject">
-            <option v-for="opt in options.Subject" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
-          </select>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron" :class="{ 'rotated': showFiltersMobile }"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
 
-        <div class="filter-group">
-          <label>Year</label>
-          <select v-model="filters.Year">
-            <option v-for="opt in options.Year" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
-          </select>
-        </div>
+      <div class="content-wrapper filter-container">
+        <div class="filter-grid">
+          <div class="filter-group">
+            <label>Level</label>
+            <select v-model="filters.Level">
+              <option v-for="opt in options.Level" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label>Subject</label>
+            <select v-model="filters.Subject">
+              <option v-for="opt in options.Subject" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
+            </select>
+          </div>
 
-        <div class="filter-group">
-          <label>Exam Type</label>
-          <select v-model="filters.Type">
-            <option v-for="opt in options.Type" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
-          </select>
-        </div>
+          <div class="filter-group">
+            <label>Year</label>
+            <select v-model="filters.Year">
+              <option v-for="opt in options.Year" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
+            </select>
+          </div>
 
-        <div class="filter-group school-select">
-          <label>School</label>
-          <select v-model="filters.School">
-            <option v-for="opt in options.School" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
-          </select>
-        </div>
+          <div class="filter-group">
+            <label>Exam Type</label>
+            <select v-model="filters.Type">
+              <option v-for="opt in options.Type" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
+            </select>
+          </div>
 
-        <button class="reset-btn" @click="resetFilters">Reset Filters</button>
+          <div class="filter-group school-select">
+            <label>School</label>
+            <select v-model="filters.School">
+              <option v-for="opt in options.School" :key="opt.code" :value="opt.code">{{ opt.name }}</option>
+            </select>
+          </div>
+
+          <button class="reset-btn" @click="resetFilters">Reset Filters</button>
+        </div>
       </div>
     </div>
 
@@ -432,15 +453,83 @@ const downloadPaper = (filename: string) => {
   .hero-stats { flex-wrap: wrap; }
 }
 
-/* Filters Bar */
 .filters-bar {
   background: white;
   border-bottom: 1px solid #e2e8f0;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 10;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-filter-toggle {
+  display: none;
+  width: calc(100% - 3rem);
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-filter-toggle .toggle-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mobile-filter-toggle svg {
+  color: #4f46e5;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  color: #94a3b8 !important;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .filters-bar {
+    padding: 0.75rem 0;
+  }
+  
+  .mobile-filter-toggle {
+    display: flex;
+  }
+
+  .filter-container {
+    display: none;
+    padding-top: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .is-expanded .filter-container {
+    display: block;
+    max-height: 800px; /* Allow enough space for expanded filters */
+  }
+
+  .filter-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .school-select {
+    grid-column: span 1;
+  }
 }
 
 .filter-grid {
