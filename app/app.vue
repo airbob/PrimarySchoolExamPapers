@@ -4,6 +4,11 @@ import { ref, computed, onMounted } from 'vue'
 // --- SEO Configuration ---
 useHead({
   title: 'Free Singapore Primary School Exam Papers | All Levels & Subjects',
+  link: [
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap' }
+  ],
   meta: [
     { name: 'description', content: 'Access free Singapore primary school exam papers for all levels. Download quality assessment papers for Math, Science, and English. Perfect for PSLE preparation.' },
     { name: 'keywords', content: 'Singapore primary school exam papers, PSLE practice papers, Primary 1-6 exam papers, Free Singapore school papers, 新加坡小学试卷' },
@@ -98,7 +103,7 @@ onMounted(async () => {
 })
 
 // --- Helpers ---
-const getName = (category: keyof DropdownData, code: string) => {
+const getName = (category: keyof DropdownData, code: string): string => {
   const found = options.value[category]?.find(opt => opt.code === code)
   return found ? found.name : code
 }
@@ -112,7 +117,7 @@ const allPapers = computed<ParsedPaper[]>(() => {
     const parts = filename.split('_')
     if (parts.length !== 5) return null // Skip invalid
 
-    const [levelCode, schoolCode, subjectCode, typeCode, yearCode] = parts
+    const [levelCode, schoolCode, subjectCode, typeCode, yearCode] = parts as [string, string, string, string, string]
 
     return {
       filename,
@@ -162,9 +167,31 @@ const downloadPaper = (filename: string) => {
   <div class="app-container">
     <!-- Header -->
     <header class="hero">
-      <div class="content-wrapper">
-        <h1 class="title">Singapore Primary School Exam Papers</h1>
-        <p class="subtitle">Free resources for PSLE preparation. Download past year papers instantly.</p>
+      <div class="hero-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+      <div class="content-wrapper hero-content">
+        <div class="tagline">Exam Papers Preparation Portal</div>
+        <h1 class="title">Singapore Primary School <span class="text-gradient">Exam Papers</span></h1>
+        <p class="subtitle">Access thousands of free high-quality assessment papers from top schools. Download instantly and start practicing today.</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value">1,800+</span>
+            <span class="stat-label">Papers</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value">All</span>
+            <span class="stat-label">Subjects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value">P1 - P6</span>
+            <span class="stat-label">Levels</span>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -219,7 +246,10 @@ const downloadPaper = (filename: string) => {
 
       <div v-else>
         <div class="results-header">
-          <h2>Found {{ resultCount }} Papers</h2>
+          <div class="results-meta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <h2>Showing <strong>{{ resultCount }}</strong> available papers</h2>
+          </div>
         </div>
 
         <div v-if="resultCount === 0" class="empty-state">
@@ -272,16 +302,16 @@ const downloadPaper = (filename: string) => {
 }
 
 .app-container {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   min-height: 100vh;
-  background-color: #f8fafc; /* Slate 50 */
-  color: #1e293b; /* Slate 800 */
+  background-color: #ffffff;
+  color: #1e293b;
   display: flex;
   flex-direction: column;
 }
 
 .content-wrapper {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
   width: 100%;
@@ -289,24 +319,117 @@ const downloadPaper = (filename: string) => {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
-  color: white;
-  padding: 4rem 0 3rem;
+  position: relative;
+  background-color: #f1f5f9; /* Slate 100 - slightly darker and more defined */
+  color: #0f172a;
+  padding: 5rem 0 4rem;
+  overflow: hidden;
   text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-image: radial-gradient(#cbd5e1 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.tagline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
 }
 
 .title {
-  font-size: 2.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.025em;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #0f172a;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2.25rem; }
+}
+
+.text-gradient {
+  color: #4f46e5; /* Match primary download button color */
 }
 
 .subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.125rem;
-  color: #c7d2fe;
+  color: #475569;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
   max-width: 600px;
   margin: 0 auto;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background: #e2e8f0;
+}
+
+@media (max-width: 640px) {
+  .hero-stats { gap: 1.5rem; }
+  .stat-divider { display: none; }
+  .hero-stats { flex-wrap: wrap; }
 }
 
 /* Filters Bar */
@@ -322,7 +445,7 @@ const downloadPaper = (filename: string) => {
 
 .filter-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 1rem;
   align-items: end;
 }
@@ -417,14 +540,33 @@ select:focus {
   100% { transform: rotate(360deg); }
 }
 
+/* Results Section */
 .results-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.results-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #475569;
+}
+
+.search-icon {
+  color: #2563eb;
 }
 
 .results-header h2 {
-  font-size: 1.25rem;
-  color: #334155;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.results-header h2 strong {
+  color: #0f172a;
+  font-weight: 700;
 }
 
 /* Papers Grid */
@@ -436,21 +578,21 @@ select:focus {
 
 .paper-card {
   background: white;
-  border-radius: 1rem;
+  border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  border: 1px solid #f1f5f9;
+  border: 1px solid #e2e8f0;
 }
 
 .paper-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  border-color: #e2e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+  border-color: #2563eb;
 }
 
 .card-header {
